@@ -72,6 +72,10 @@ body {
   min-height: 50vh!important;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 hr {
   box-sizing: content-box;
   height: 0;

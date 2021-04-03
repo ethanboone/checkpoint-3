@@ -1,6 +1,7 @@
 import { ProxyState } from "../AppState.js"
 import Task from "../Models/Task.js"
 import { taskService } from "../Services/TaskService.js"
+import { loadState } from "../Utils/LocalStorage.js"
 
 function _draw() {
     let form = document.getElementById('tasks')
@@ -10,12 +11,14 @@ function _draw() {
     }
     ProxyState.tasks.forEach(task => template += task.Template)
     form.innerHTML = template
+
 }
 
 
 export default class TaskController {
     constructor() {
         ProxyState.on("tasks", _draw)
+        loadState()
     }
 
     removeTask(id) {
@@ -25,5 +28,15 @@ export default class TaskController {
     completed(id) {
         window.event.preventDefault()
         taskService.completed(id)
+    }
+    addTask(listId) {
+        window.event.preventDefault()
+        let form = window.event.target
+        let task = {
+            name: form.task.value,
+            listId: listId
+        }
+        taskService.addTask(task)
+        form.reset()
     }
 }

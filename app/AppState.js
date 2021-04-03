@@ -6,6 +6,7 @@ import { isValidProp } from "./Utils/isValidProp.js"
 class AppState extends EventEmitter {
   /** @type {List[]} */
   lists = []
+  /** @type {Task[]} */
   tasks = []
 }
 

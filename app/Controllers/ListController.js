@@ -1,6 +1,7 @@
 import { ProxyState } from "../AppState.js"
 import List from "../Models/List.js"
 import { listService } from "../Services/ListService.js"
+import { loadState, saveState } from "../Utils/LocalStorage.js";
 
 function _draw() {
     let form = document.getElementById('app')
@@ -17,6 +18,8 @@ function _draw() {
 export default class ListController {
     constructor() {
         ProxyState.on("lists", _draw)
+        ProxyState.on("tasks", _draw)
+        loadState()
         _draw()
     }
 
@@ -31,14 +34,6 @@ export default class ListController {
         listService.addList(list)
         form.reset()
     }
-    addTask() {
-        window.event.preventDefault()
-        let form = window.event.target
-        let task = {
-            name: form.task.value
-        }
-        listService.addTask(task)
-        form.reset()
-    }
+
 
 }
