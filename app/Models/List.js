@@ -13,6 +13,7 @@ export default class List {
             <div class="card shadow bg-white rounded" id="list">
                 <div class="text-center p-2 d-flex bg-${this.color} justify-content-between">
                 <h3>${this.name}</h3>
+                <button class="btn text-light btn-outline-light" onclick="app.listController.removeList('${this.id}')">x</button>
             </div>
             <div class="p-3" id="tasks">
             ${this.Tasks}

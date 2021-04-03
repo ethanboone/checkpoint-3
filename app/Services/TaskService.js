@@ -10,16 +10,17 @@ class TaskService {
     }
 
     removeTask(id) {
-        let tasks = ProxyState.tasks
-        //tasks.find(task => id == task.id)
-        console.log()
+        console.log('task service')
+        ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
+        saveState()
     }
-
     completed(id) {
+
         let foundTask = ProxyState.task.find(t => t.id == id)
 
         // document.getElementById('taskText').classList.add('completed')
     }
 }
+
 
 export const taskService = new TaskService()

@@ -35,5 +35,12 @@ export default class ListController {
         form.reset()
     }
 
+    removeList(id) {
+        if (window.confirm('Are you sure you want to delete this list?')) {
+            listService.removeList(id)
+        }
+        return
+    }
+
 
 }

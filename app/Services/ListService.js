@@ -9,6 +9,11 @@ class ListService {
         saveState()
     }
 
+    removeList(id) {
+        ProxyState.lists = ProxyState.lists.filter(l => l.id != id)
+        saveState()
+    }
+
 }
 
 export const listService = new ListService()

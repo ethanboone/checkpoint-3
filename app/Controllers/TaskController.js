@@ -22,9 +22,13 @@ export default class TaskController {
     }
 
     removeTask(id) {
-        window.event.preventDefault()
-        taskService.removeTask(id)
+        console.log('task controller')
+        if (window.confirm('Are you sure you want to delete this task?')) {
+            taskService.removeTask(id)
+        }
+        return
     }
+
     completed(id) {
         window.event.preventDefault()
         taskService.completed(id)

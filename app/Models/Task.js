@@ -17,7 +17,7 @@ export default class Task {
                     <label class="form-check-label" for="inlineCheckbox1"></label>
                 </div>
                     <div id="taskText">${this.name}</div>
-                    <button type="submit" class="btn bg-danger text-light" title='X' onsubmit="app.taskController.removeTask(${this.id})">X</button>
+                    <button class="btn bg-danger text-light" title='X' onclick="app.taskController.removeTask('${this.id}')">X</button>
             </div>
         </div>
         `
