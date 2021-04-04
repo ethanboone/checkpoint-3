@@ -9,7 +9,7 @@ function _draw() {
     if (ProxyState.lists.length == 0) {
         template += `<div class="col"><p>No lists yet...</p></div>`
     }
-    ProxyState.lists.forEach(list => template += list.Template)
+    ProxyState.lists.forEach(l => template += l.Template)
     form.innerHTML = template
 }
 

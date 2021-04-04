@@ -13,10 +13,12 @@ export function loadState() {
     let listData = JSON.parse(window.localStorage.getItem('lists'))
     let taskData = JSON.parse(window.localStorage.getItem('tasks'))
     if (listData) {
-        ProxyState.lists = listData.map(list => new List(list.name, list.color))
+        ProxyState.lists = listData.map(list => new List(list.name, list.color, list.id))
     }
     if (taskData) {
-        ProxyState.tasks = taskData.map(task => new Task(task.name, task.listId))
+        console.log(ProxyState.lists)
+        ProxyState.tasks = taskData.map(task => new Task(task.name, task.listId, task.taskBody, task.check))
+        console.log(ProxyState.tasks)
         //taskData = ProxyState.tasks
     }
     // if ((listData != null || listData != undefined) && listData.length > ProxyState.lists.length) {
