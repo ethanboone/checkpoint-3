@@ -34,15 +34,12 @@ export default class List {
     }
     get Tasks() {
         let taskList = ProxyState.tasks.filter(t => t.listId == this.id)
-        //console.log(taskList)
         let template = ''
         taskList.forEach(t => template += t.Template)
         return template
     }
     get completedTasks() {
         let tasks = ProxyState.tasks.filter(t => t.listId === this.id)
-        //let listTasks = tasks.filter(t => t.listId == this.id)
-        //let incomplete = tasks.filter(t => t.check == false)
         let complete = tasks.filter(t => t.check == true)
         let template = ''
         template = `${complete.length}/${tasks.length}`

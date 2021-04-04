@@ -10,7 +10,6 @@ class TaskService {
     }
 
     removeTask(id) {
-        console.log('task service')
         ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
         saveState()
     }
@@ -27,7 +26,6 @@ class TaskService {
             saveState()
             return
         }
-        // document.getElementById('taskText').classList.add('completed')
     }
 }
 
