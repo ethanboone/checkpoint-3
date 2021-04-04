@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/style/main.css">
     <title>checkpoint-3</title>
 </head>
@@ -23,12 +26,14 @@
     <main>
         <div class="container-fluid">
             <form onsubmit="app.listController.addList()">
-                <div class="row my-3">
+                <div class="row my-3 align-items-end">
                     <div class="col-3">
-                        <input type="text" id="name" class="form-control" placeholder="Name...">
+                        <label for="listName">List Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Name..." required min="3"
+                            max="15">
                     </div>
                     <div class="col-3">
-                        <select class="form-control" id="color">
+                        <select class="form-control" id="color" required>
                             <option>red</option>
                             <option>blue</option>
                             <option>purple</option>

@@ -4,8 +4,7 @@ import { saveState } from "../Utils/LocalStorage.js"
 
 class TaskService {
     addTask(task) {
-        console.log('added task')
-        ProxyState.tasks = [...ProxyState.tasks, new Task(task.name, task.listId)]
+        ProxyState.tasks = [...ProxyState.tasks, new Task(task.name, task.listId, task.check)]
         saveState()
     }
 
@@ -15,9 +14,18 @@ class TaskService {
         saveState()
     }
     completed(id) {
-
-        let foundTask = ProxyState.task.find(t => t.id == id)
-
+        let foundIndex = ProxyState.tasks[ProxyState.tasks.findIndex(t => t.id == id)]
+        if (foundIndex.check == false) {
+            foundIndex.check = true
+            saveState()
+            ProxyState.tasks = ProxyState.tasks
+            return
+        } else if (foundIndex.check == true) {
+            foundIndex.check = false
+            saveState()
+            ProxyState.tasks = ProxyState.tasks
+            return
+        }
         // document.getElementById('taskText').classList.add('completed')
     }
 }

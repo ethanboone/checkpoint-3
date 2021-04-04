@@ -22,7 +22,6 @@ export default class TaskController {
     }
 
     removeTask(id) {
-        console.log('task controller')
         if (window.confirm('Are you sure you want to delete this task?')) {
             taskService.removeTask(id)
         }
@@ -30,7 +29,10 @@ export default class TaskController {
     }
 
     completed(id) {
-        window.event.preventDefault()
+        // window.event.preventDefault()
+        // let form = window.event.target
+        console.log('controller')
+        // window.event.preventDefault()
         taskService.completed(id)
     }
     addTask(listId) {
@@ -38,7 +40,8 @@ export default class TaskController {
         let form = window.event.target
         let task = {
             name: form.task.value,
-            listId: listId
+            listId: listId,
+            check: false
         }
         taskService.addTask(task)
         form.reset()

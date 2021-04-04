@@ -13,9 +13,7 @@ export function loadState() {
     let listData = JSON.parse(window.localStorage.getItem('lists'))
     let taskData = JSON.parse(window.localStorage.getItem('tasks'))
     if (listData) {
-        console.log(ProxyState.lists)
         ProxyState.lists = listData.map(list => new List(list.name, list.color))
-        console.log(ProxyState.lists)
     }
     if (taskData) {
         ProxyState.tasks = taskData.map(task => new Task(task.name, task.listId))

@@ -30,7 +30,6 @@ export default class ListController {
             name: form.name.value,
             color: form.color.value
         }
-        console.log(form.name.value)
         listService.addList(list)
         form.reset()
     }
