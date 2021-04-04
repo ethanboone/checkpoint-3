@@ -9,14 +9,14 @@ export default class List {
     }
     get Template() {
         return `
-        <div class="col-md-4 my-4">
+        <div class="col-11 col-md-4 my-4">
             <div class="card shadow bg-white rounded" id="list">
                 <div class="text-center p-2 d-flex bg-${this.color} justify-content-between">
                     <div class="d-flex flex-column">
                         <h3>${this.name}</h3>
                         <p>${this.completedTasks}</p>
                     </div>
-                <button class="btn btn-sm text-light btn-outline-light" onclick="app.listController.removeList('${this.id}')">x</button>
+                <button class="btn btn-sm btn-white" onclick="app.listController.removeList('${this.id}')">x</button>
             </div>
             <div class="p-3" id="tasks">
             ${this.Tasks}

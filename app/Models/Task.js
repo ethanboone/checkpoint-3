@@ -15,12 +15,12 @@ export default class Task {
         <div class="row justify-content-between my-2">
             <div class="col d-flex align-items-center">
                 ${this.check == true ? '<i class="fas fa-check"></i>' : ''}
-                <button class="btn btn-sm btn-outline-success m-2" onclick="app.taskController.completed('${this.id}')">Done</button>
+                <button class="btn btn-sm btn-outline-gray m-2" onclick="app.taskController.completed('${this.id}')">Done</button>
                     <div class="d-flex flex-column m-2">
                         <h5 id="taskText">${this.name}</h5>
                         <span>${this.taskBody}</span>
                     </div>
-                <button class="justify-content-end btn btn-sm text-danger" title='X' onclick="app.taskController.removeTask('${this.id}')">X</button>
+                <button class="justify-content-end btn text-red" title='X' onclick="app.taskController.removeTask('${this.id}')">x</button>
             </div>
         </div>
         `
