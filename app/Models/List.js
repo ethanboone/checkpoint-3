@@ -23,9 +23,9 @@ export default class List {
             </div>
             <form class="d-flex flex-column justify-items-end p-2" onsubmit="app.taskController.addTask('${this.id}')">
                 <input type="text" name="task" class="form-control" placeholder="Add Task Title..."
-                  aria-describedby="helpId" min="3" max="15" required></input>
+                  aria-describedby="helpId" minlength="3" maxlength="15" required></input>
                 <input type="text" name="taskBody" class="form-control" placeholder="Add Task Body..."
-                  aria-describedby="helpId" min="3" max="50" required></input>
+                  aria-describedby="helpId" minlength="3" maxlength="50" required></input>
               <button type="submit" class="btn bg-${this.color}" title='+'>+</button>
             </form>
             </div>
